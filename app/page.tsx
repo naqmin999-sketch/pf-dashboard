@@ -22,9 +22,7 @@ export default async function DashboardPage() {
       {/* ── Header ── */}
       <header className="bg-black border-b border-zinc-800 h-9 px-4 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-3">
-          <span className="text-amber-400 font-bold text-xs tracking-wider">DL이앤씨</span>
-          <span className="text-zinc-800 text-[10px]">|</span>
-          <span className="text-zinc-500 text-[10px] tracking-wide">재무솔루션팀 · Market Intelligence</span>
+          <span className="text-amber-400 font-bold text-xs tracking-wider">DL이앤씨 | 재무솔루션팀 · Market Intelligence</span>
         </div>
         <span className="text-zinc-600 text-[10px] font-mono">
           {new Date().toLocaleDateString("ko-KR", {
