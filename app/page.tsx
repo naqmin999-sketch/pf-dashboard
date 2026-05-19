@@ -1,21 +1,11 @@
 import { getMarketData } from "@/lib/market";
 import { getNews } from "@/lib/news";
-import MarketBar from "@/components/MarketBar";
 import RatesPanel from "@/components/RatesPanel";
 import NewsColumn from "@/components/NewsColumn";
 import SummaryPanel from "@/components/SummaryPanel";
 
 export const revalidate = 1800;
 
-function formatKST(iso: string) {
-  return new Date(iso).toLocaleString("ko-KR", {
-    timeZone: "Asia/Seoul",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-}
 
 export default async function DashboardPage() {
   const [market, news] = await Promise.allSettled([getMarketData(), getNews()]);
@@ -25,8 +15,6 @@ export default async function DashboardPage() {
     news.status === "fulfilled"
       ? news.value
       : { realestate: [], construction: [], pf: [] };
-
-  const updatedAt = marketData ? formatKST(marketData.updatedAt) : "--";
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-zinc-950">
@@ -47,9 +35,6 @@ export default async function DashboardPage() {
           })}
         </span>
       </header>
-
-      {/* ── Ticker Bar ── */}
-      <MarketBar data={marketData} updatedAt={updatedAt} />
 
       {/* ── Main 5-Panel Layout ── */}
       <main className="flex-1 overflow-hidden flex gap-px bg-zinc-800 min-h-0">
