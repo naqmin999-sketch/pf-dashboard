@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm install *)",
+      "PowerShell(npx tsc --noEmit 2>&1)",
+      "PowerShell(Get-ChildItem -Recurse src\\\\app\\\\ | Where-Object { !$_.PSIsContainer } | Select-Object FullName)",
+      "PowerShell(cmd /c \"dir /s /b src\")",
+      "PowerShell(cmd /c \"type package.json\")",
+      "PowerShell(Remove-Item *)"
+    ]
+  }
+}
