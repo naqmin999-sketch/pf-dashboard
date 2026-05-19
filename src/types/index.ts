@@ -1,6 +1,8 @@
 export interface MarketData {
   kospi: Ticker;
+  kosdaq: Ticker;
   usdKrw: Ticker;
+  jpyKrw100: Ticker;
   us10y: Ticker;
   updatedAt: string;
 }
