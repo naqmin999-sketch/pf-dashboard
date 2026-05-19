@@ -3,6 +3,8 @@ export interface MarketData {
   kosdaq: Ticker;
   usdKrw: Ticker;
   jpyKrw100: Ticker;
+  kr5y: Ticker;
+  kr10y: Ticker;
   us10y: Ticker;
   updatedAt: string;
 }
