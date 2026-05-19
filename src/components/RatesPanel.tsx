@@ -20,7 +20,7 @@ function chColor(change: number) {
 }
 
 function SectionHead({ children }: { children: React.ReactNode }) {
-  return <p className="text-[9px] text-zinc-600 uppercase tracking-[0.15em] mb-[5px]">{children}</p>;
+  return <p className="text-[10px] text-zinc-200 font-semibold tracking-[0.1em] mb-[5px]">{children}</p>;
 }
 
 function Divider() {
@@ -32,7 +32,7 @@ function TickerRow({ t, dec = 2 }: { t: Ticker; dec?: number }) {
   const has = t.value !== 0;
   return (
     <div className="mb-[7px]">
-      <div className="text-[9px] text-zinc-500 leading-none mb-[2px]">{t.label}</div>
+      <div className="text-[9px] text-zinc-400 leading-none mb-[2px]">{t.label}</div>
       <div className="flex items-baseline gap-[6px]">
         <span className="text-[13px] font-mono text-zinc-100">{numFmt(t.value, dec)}</span>
         {has && (
@@ -53,7 +53,7 @@ function BondRow({ t }: { t: Ticker }) {
   const bpStr = absCh >= 0.001 ? `${absCh.toFixed(3)}%p` : "";
   return (
     <div className="mb-[7px]">
-      <div className="text-[9px] text-zinc-500 leading-none mb-[2px]">{t.label}</div>
+      <div className="text-[9px] text-zinc-400 leading-none mb-[2px]">{t.label}</div>
       <div className="flex items-baseline gap-[6px]">
         <span className="text-[13px] font-mono text-zinc-100">{has ? `${numFmt(t.value, 3)}%` : "--"}</span>
         {has && t.change !== 0 && (
